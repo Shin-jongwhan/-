@@ -1,6 +1,9 @@
 # PIL 기반의 이미지 생성을 제외한 쥘리아 집합 생성기
 import time
 import matplotlib.pyplot as plt
+import calculate
+import calculate_2
+import julia_set_7_1
 
 # 계산할 복소평면 영역
 x1, x2, y1, y2 = -1.8, 1.8, -1.8, 1.8
@@ -34,10 +37,12 @@ def calc_pure_python(desired_width, max_iterations) :
         print("Length of x : ", len(x))
         print("Total elements : ", len(zs))
         start_time = time.time()
-        output = calculate_z_serial_purepython(max_iterations, zs, cs)
+        #output = calculate_2.calculate_z(max_iterations, zs, cs)
+        output = julia_set_7_1.calculate_z(max_iterations, zs, cs)
         end_time = time.time()
         secs = end_time - start_time
-        print(calculate_z_serial_purepython.__name__ + "took", secs, "seconds")
+        #print(calculate_2.calculate_z.__name__ + " took", secs, "seconds")
+        print(julia_set_7_1.calculate_z.__name__ + " took", secs, "seconds")
         output_real = []
         output_imag = []
         cs_real = []
@@ -47,7 +52,7 @@ def calc_pure_python(desired_width, max_iterations) :
                 output_imag.append(i.imag)
         plt.rcParams['agg.path.chunksize'] = 10000
         plt.figure(dpi=1000)
-        plt.scatter(output_real, output_imag, s=0.1, edgecolor='none')
+        plt.scatter(output_real, output_imag, s=0.01, edgecolor='none')
         #plt.show()
         plt.savefig("julia.png")
 
@@ -55,28 +60,6 @@ def calc_pure_python(desired_width, max_iterations) :
 	# 제한된 입력으로 작업할 경우 발생할 수 있는 사소한 에러를 잡기 위한 목적이다.
 	#assert sum(output) == 33219980
 
-
-def calculate_z_serial_purepython(maxiter, zs, cs) :
-        # 쥘리아 업데이트 규칙을 이용해 output 리스트를 계산한다.
-        #output = [0] * len(zs)
-        output = []
-        for i in range(len(zs)) :
-                n = 0
-                z = zs[i]
-                c = cs[i]
-                z_1 = 0
-                while n < maxiter and abs(z) < 2 :
-                        if n == 0 :
-                                z_1 = z*z+c
-                        z = z*z+c
-                        n += 1
-                if n == maxiter :
-                        output.append(z_1)
-		#print(z)
-		#output[i] = n
-                #output.append(z)
-        return output
-
 if __name__ == "__main__" :
 	# 노트북에 적절한 기본값으로 쥘리아 집합을 구하는 순수 파이썬 구현
-	calc_pure_python(desired_width=10000, max_iterations=300)
+	calc_pure_python(desired_width=1000, max_iterations=300)
