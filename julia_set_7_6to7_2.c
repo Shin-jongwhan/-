@@ -1287,7 +1287,6 @@ static PyObject *__pyx_n_s_z;
 static PyObject *__pyx_n_s_z_1;
 static PyObject *__pyx_n_s_zs;
 static PyObject *__pyx_pf_18julia_set_7_6to7_2_calculate_z(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_maxiter, PyObject *__pyx_v_zs, PyObject *__pyx_v_cs); /* proto */
-static PyObject *__pyx_int_0;
 static PyObject *__pyx_tuple_;
 static PyObject *__pyx_codeobj__2;
 /* Late includes */
@@ -1379,8 +1378,8 @@ static PyObject *__pyx_pf_18julia_set_7_6to7_2_calculate_z(CYTHON_UNUSED PyObjec
   unsigned int __pyx_v_n;
   __pyx_t_double_complex __pyx_v_z;
   __pyx_t_double_complex __pyx_v_c;
+  __pyx_t_double_complex __pyx_v_z_1;
   PyObject *__pyx_v_output = NULL;
-  PyObject *__pyx_v_z_1 = NULL;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -1398,7 +1397,7 @@ static PyObject *__pyx_pf_18julia_set_7_6to7_2_calculate_z(CYTHON_UNUSED PyObjec
 
   /* "julia_set_7_6to7_2.pyx":5
  *         cdef unsigned int i, n
- *         cdef double complex z, c
+ *         cdef double complex z, c, z_1
  *         output = []             # <<<<<<<<<<<<<<
  *         for i in range(len(zs)) :
  *                 n = 0
@@ -1409,7 +1408,7 @@ static PyObject *__pyx_pf_18julia_set_7_6to7_2_calculate_z(CYTHON_UNUSED PyObjec
   __pyx_t_1 = 0;
 
   /* "julia_set_7_6to7_2.pyx":6
- *         cdef double complex z, c
+ *         cdef double complex z, c, z_1
  *         output = []
  *         for i in range(len(zs)) :             # <<<<<<<<<<<<<<
  *                 n = 0
@@ -1462,8 +1461,7 @@ static PyObject *__pyx_pf_18julia_set_7_6to7_2_calculate_z(CYTHON_UNUSED PyObjec
  *                 while n < maxiter and (z.real * z.real + z.imag * z.imag) < 2 :
  *                         if n == 0 :
  */
-    __Pyx_INCREF(__pyx_int_0);
-    __Pyx_XDECREF_SET(__pyx_v_z_1, __pyx_int_0);
+    __pyx_v_z_1 = __pyx_t_double_complex_from_parts(0, 0);
 
     /* "julia_set_7_6to7_2.pyx":11
  *                 c = cs[i]
@@ -1501,11 +1499,7 @@ static PyObject *__pyx_pf_18julia_set_7_6to7_2_calculate_z(CYTHON_UNUSED PyObjec
  *                         z = z*z+c
  *                         n += 1
  */
-        __pyx_t_5 = __Pyx_c_sum_double(__Pyx_c_prod_double(__pyx_v_z, __pyx_v_z), __pyx_v_c);
-        __pyx_t_1 = __pyx_PyComplex_FromComplex(__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 13, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_DECREF_SET(__pyx_v_z_1, __pyx_t_1);
-        __pyx_t_1 = 0;
+        __pyx_v_z_1 = __Pyx_c_sum_double(__Pyx_c_prod_double(__pyx_v_z, __pyx_v_z), __pyx_v_c);
 
         /* "julia_set_7_6to7_2.pyx":12
  *                 z_1 = 0
@@ -1551,7 +1545,10 @@ static PyObject *__pyx_pf_18julia_set_7_6to7_2_calculate_z(CYTHON_UNUSED PyObjec
  *                         output.append(z_1)             # <<<<<<<<<<<<<<
  *         return output
  */
-      __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_output, __pyx_v_z_1); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 17, __pyx_L1_error)
+      __pyx_t_1 = __pyx_PyComplex_FromComplex(__pyx_v_z_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 17, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __pyx_t_8 = __Pyx_PyList_Append(__pyx_v_output, __pyx_t_1); if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 17, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
       /* "julia_set_7_6to7_2.pyx":16
  *                         z = z*z+c
@@ -1586,7 +1583,6 @@ static PyObject *__pyx_pf_18julia_set_7_6to7_2_calculate_z(CYTHON_UNUSED PyObjec
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_output);
-  __Pyx_XDECREF(__pyx_v_z_1);
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
@@ -1673,7 +1669,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         #     output  .
  *         cdef unsigned int i, n
  */
-  __pyx_tuple_ = PyTuple_Pack(9, __pyx_n_s_maxiter, __pyx_n_s_zs, __pyx_n_s_cs, __pyx_n_s_i, __pyx_n_s_n, __pyx_n_s_z, __pyx_n_s_c, __pyx_n_s_output, __pyx_n_s_z_1); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_tuple_ = PyTuple_Pack(9, __pyx_n_s_maxiter, __pyx_n_s_zs, __pyx_n_s_cs, __pyx_n_s_i, __pyx_n_s_n, __pyx_n_s_z, __pyx_n_s_c, __pyx_n_s_z_1, __pyx_n_s_output); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
   __pyx_codeobj__2 = (PyObject*)__Pyx_PyCode_New(3, 0, 9, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple_, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_julia_set_7_6to7_2_pyx, __pyx_n_s_calculate_z, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__2)) __PYX_ERR(0, 1, __pyx_L1_error)
@@ -1686,7 +1682,6 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
 static CYTHON_SMALL_CODE int __Pyx_InitGlobals(void) {
   if (__Pyx_InitStrings(__pyx_string_tab) < 0) __PYX_ERR(0, 1, __pyx_L1_error);
-  __pyx_int_0 = PyInt_FromLong(0); if (unlikely(!__pyx_int_0)) __PYX_ERR(0, 1, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;

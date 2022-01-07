@@ -1,7 +1,7 @@
 def calculate_z(int maxiter, zs, cs) :
         # 쥘리아 업데이트 규칙을 이용해 output 리스트를 계산한다.
         cdef unsigned int i, n
-        cdef double complex z, c
+        cdef double complex z, c, z_1
         output = []
         for i in range(len(zs)) :
                 n = 0

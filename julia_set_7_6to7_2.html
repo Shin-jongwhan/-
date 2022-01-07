@@ -295,8 +295,8 @@ body.cython { font-family: courier; font-size: 12; }
     Click on a line that starts with a "<code>+</code>" to see the C code that Cython generated for it.
 </p>
 <p>Raw output: <a href="julia_set_7_6to7_2.c">julia_set_7_6to7_2.c</a></p>
-<div class="cython"><pre class="cython line score-53" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">01</span>: def calculate_z(int maxiter, zs, cs) :</pre>
-<pre class='cython code score-53 '>/* Python wrapper */
+<div class="cython"><pre class="cython line score-52" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">01</span>: def calculate_z(int maxiter, zs, cs) :</pre>
+<pre class='cython code score-52 '>/* Python wrapper */
 static PyObject *__pyx_pw_18julia_set_7_6to7_2_1calculate_z(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static PyMethodDef __pyx_mdef_18julia_set_7_6to7_2_1calculate_z = {"calculate_z", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_18julia_set_7_6to7_2_1calculate_z, METH_VARARGS|METH_KEYWORDS, 0};
 static PyObject *__pyx_pw_18julia_set_7_6to7_2_1calculate_z(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
@@ -377,8 +377,8 @@ static PyObject *__pyx_pf_18julia_set_7_6to7_2_calculate_z(CYTHON_UNUSED PyObjec
   unsigned int __pyx_v_n;
   __pyx_t_double_complex __pyx_v_z;
   __pyx_t_double_complex __pyx_v_c;
+  __pyx_t_double_complex __pyx_v_z_1;
   PyObject *__pyx_v_output = NULL;
-  PyObject *__pyx_v_z_1 = NULL;
   PyObject *__pyx_r = NULL;
   <span class='refnanny'>__Pyx_RefNannyDeclarations</span>
   <span class='refnanny'>__Pyx_RefNannySetupContext</span>("calculate_z", 0);
@@ -390,13 +390,12 @@ static PyObject *__pyx_pf_18julia_set_7_6to7_2_calculate_z(CYTHON_UNUSED PyObjec
   __pyx_r = NULL;
   __pyx_L0:;
   <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_v_output);
-  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_v_z_1);
   <span class='refnanny'>__Pyx_XGIVEREF</span>(__pyx_r);
   <span class='refnanny'>__Pyx_RefNannyFinishContext</span>();
   return __pyx_r;
 }
 /* … */
-  __pyx_tuple_ = <span class='py_c_api'>PyTuple_Pack</span>(9, __pyx_n_s_maxiter, __pyx_n_s_zs, __pyx_n_s_cs, __pyx_n_s_i, __pyx_n_s_n, __pyx_n_s_z, __pyx_n_s_c, __pyx_n_s_output, __pyx_n_s_z_1);<span class='error_goto'> if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 1, __pyx_L1_error)</span>
+  __pyx_tuple_ = <span class='py_c_api'>PyTuple_Pack</span>(9, __pyx_n_s_maxiter, __pyx_n_s_zs, __pyx_n_s_cs, __pyx_n_s_i, __pyx_n_s_n, __pyx_n_s_z, __pyx_n_s_c, __pyx_n_s_z_1, __pyx_n_s_output);<span class='error_goto'> if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 1, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_tuple_);
   <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_tuple_);
 /* … */
@@ -406,7 +405,7 @@ static PyObject *__pyx_pf_18julia_set_7_6to7_2_calculate_z(CYTHON_UNUSED PyObjec
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
 </pre><pre class="cython line score-0">&#xA0;<span class="">02</span>:         # 쥘리아 업데이트 규칙을 이용해 output 리스트를 계산한다.</pre>
 <pre class="cython line score-0">&#xA0;<span class="">03</span>:         cdef unsigned int i, n</pre>
-<pre class="cython line score-0">&#xA0;<span class="">04</span>:         cdef double complex z, c</pre>
+<pre class="cython line score-0">&#xA0;<span class="">04</span>:         cdef double complex z, c, z_1</pre>
 <pre class="cython line score-5" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">05</span>:         output = []</pre>
 <pre class='cython code score-5 '>  __pyx_t_1 = <span class='py_c_api'>PyList_New</span>(0);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 5, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
@@ -431,9 +430,8 @@ static PyObject *__pyx_pf_18julia_set_7_6to7_2_calculate_z(CYTHON_UNUSED PyObjec
     __pyx_t_5 = <span class='pyx_c_api'>__Pyx_PyComplex_As___pyx_t_double_complex</span>(__pyx_t_1);<span class='error_goto'> if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 9, __pyx_L1_error)</span>
     <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_v_c = __pyx_t_5;
-</pre><pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">10</span>:                 z_1 = 0</pre>
-<pre class='cython code score-2 '>    <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_int_0);
-    <span class='pyx_macro_api'>__Pyx_XDECREF_SET</span>(__pyx_v_z_1, __pyx_int_0);
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">10</span>:                 z_1 = 0</pre>
+<pre class='cython code score-0 '>    __pyx_v_z_1 = __pyx_t_double_complex_from_parts(0, 0);
 </pre><pre class="cython line score-4" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">11</span>:                 while n &lt; maxiter and (z.real * z.real + z.imag * z.imag) &lt; 2 :</pre>
 <pre class='cython code score-4 '>    while (1) {
       __pyx_t_7 = ((__pyx_v_n &lt; __pyx_v_maxiter) != 0);
@@ -451,12 +449,8 @@ static PyObject *__pyx_pf_18julia_set_7_6to7_2_calculate_z(CYTHON_UNUSED PyObjec
       if (__pyx_t_6) {
 /* … */
       }
-</pre><pre class="cython line score-6" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">13</span>:                                 z_1 = z*z+c</pre>
-<pre class='cython code score-6 '>        __pyx_t_5 = __Pyx_c_sum_double(__Pyx_c_prod_double(__pyx_v_z, __pyx_v_z), __pyx_v_c);
-        __pyx_t_1 = __pyx_<span class='py_c_api'>PyComplex_FromComplex</span>(__pyx_t_5);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 13, __pyx_L1_error)</span>
-        <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
-        <span class='pyx_macro_api'>__Pyx_DECREF_SET</span>(__pyx_v_z_1, __pyx_t_1);
-        __pyx_t_1 = 0;
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">13</span>:                                 z_1 = z*z+c</pre>
+<pre class='cython code score-0 '>        __pyx_v_z_1 = __Pyx_c_sum_double(__Pyx_c_prod_double(__pyx_v_z, __pyx_v_z), __pyx_v_c);
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">14</span>:                         z = z*z+c</pre>
 <pre class='cython code score-0 '>      __pyx_v_z = __Pyx_c_sum_double(__Pyx_c_prod_double(__pyx_v_z, __pyx_v_z), __pyx_v_c);
 </pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">15</span>:                         n += 1</pre>
@@ -468,8 +462,11 @@ static PyObject *__pyx_pf_18julia_set_7_6to7_2_calculate_z(CYTHON_UNUSED PyObjec
 /* … */
     }
   }
-</pre><pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">17</span>:                         output.append(z_1)</pre>
-<pre class='cython code score-2 '>      __pyx_t_8 = <span class='pyx_c_api'>__Pyx_PyList_Append</span>(__pyx_v_output, __pyx_v_z_1);<span class='error_goto'> if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 17, __pyx_L1_error)</span>
+</pre><pre class="cython line score-8" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">17</span>:                         output.append(z_1)</pre>
+<pre class='cython code score-8 '>      __pyx_t_1 = __pyx_<span class='py_c_api'>PyComplex_FromComplex</span>(__pyx_v_z_1);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 17, __pyx_L1_error)</span>
+      <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
+      __pyx_t_8 = <span class='pyx_c_api'>__Pyx_PyList_Append</span>(__pyx_v_output, __pyx_t_1);<span class='error_goto'> if (unlikely(__pyx_t_8 == ((int)-1))) __PYX_ERR(0, 17, __pyx_L1_error)</span>
+      <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
 </pre><pre class="cython line score-2" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">18</span>:         return output</pre>
 <pre class='cython code score-2 '>  <span class='pyx_macro_api'>__Pyx_XDECREF</span>(__pyx_r);
   <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_v_output);
