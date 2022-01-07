@@ -8,4 +8,4 @@
 #### f(z)를 300번 계산할 때까지 2를 넘지 않는다면 수렴, 300번이 되면 발산한다고 판정한다.
 #### 300번 이하이면 z0를 하얀색, itermax 도달 시 z0을 검은색으로 칠한다.
 ![julia](https://user-images.githubusercontent.com/62974484/148565253-4aaf96ae-4570-42c4-8574-93b9a679c164.png)
-![쥘리아 집합 cython 성능 개선](https://user-images.githubusercontent.com/62974484/148568153-fd5639b2-560d-4253-8368-0f15d16aad7f.PNG)
+![쥘리아 집합 cython 성능 개선](https://user-images.githubusercontent.com/62974484/148570853-690988c9-8cd4-4243-845f-aa557cb55886.PNG)
